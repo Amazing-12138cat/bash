@@ -8,4 +8,4 @@ do
         else
                 echo $ip >>./error.txt
         fi
-don
+done
