@@ -1,11 +1,11 @@
 #!/bin/bash
-cat ./ip.txt | while read ip
+cat ./ip.txt|while read ip
 do
-        cutycapt --insecure --url=https://$ip --max-wait=5000 --out=$ip.png
-        if test ! -f $ip.png; 
-        then
-                echo $ip
+        cutycapt --url=https://$ip --out=$ip.png --max-wait=5000 --insecure
+        if test ! -f $ip.png; then 
+        #echo $ip
+                echo $ip >> ./error.txt
         else
-                echo $ip >>./error.txt
+                echo $ip
         fi
 done
